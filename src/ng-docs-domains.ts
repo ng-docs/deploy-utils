@@ -1,0 +1,1 @@
+export const ngDocsDomains = ['videos.angular.cn', 'material-preview.angular.cn', 'material-11.angular.cn', 'material-12.angular.cn', 'material-14.angular.cn', 'material-15.angular.cn'];

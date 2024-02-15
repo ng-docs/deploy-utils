@@ -1,0 +1,19 @@
+{
+  "name": "verify-all",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "add-dns": "ts-node src/add-dns.ts",
+    "verify-all": "ts-node src/verify-all.ts",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@alicloud/alidns20150109": "^3.0.13",
+    "@alicloud/ecs20140526": "^4.0.0",
+    "@alicloud/openapi-client": "^0.4.8",
+    "puppeteer": "^22.0.0"
+  }
+}
