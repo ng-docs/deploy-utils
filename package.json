@@ -6,6 +6,7 @@
   "scripts": {
     "add-dns": "ts-node src/add-dns.ts",
     "verify-all": "ts-node src/verify-all.ts",
+    "create-nginx-configs": "ts-node src/create-nginx-configs.ts",
     "test": "jest"
   },
   "author": "",
@@ -14,6 +15,8 @@
     "@alicloud/alidns20150109": "^3.0.13",
     "@alicloud/ecs20140526": "^4.0.0",
     "@alicloud/openapi-client": "^0.4.8",
-    "puppeteer": "^22.0.0"
+    "@octokit/rest": "^20.0.2",
+    "puppeteer": "^22.0.0",
+    "shelljs": "^0.8.5"
   }
 }
