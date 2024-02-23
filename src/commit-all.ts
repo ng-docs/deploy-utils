@@ -4,6 +4,6 @@ import {exec} from 'shelljs';
 
 owners.forEach(owner => {
   subNames.forEach(subName => {
-    exec(`rm -fr assets/videos`, {cwd: `output/github/${owner}/${subName}angular.cn`});
+    exec('git commit -am "fix: update versions"', {cwd: `output/github/${owner}/${subName}angular.cn`});
   });
 });
