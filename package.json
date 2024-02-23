@@ -8,6 +8,7 @@
     "verify-all": "ts-node src/verify-all.ts",
     "create-nginx-configs": "ts-node src/create-nginx-configs.ts",
     "get-pages": "ts-node src/pages.ts",
+    "fix-videos": "ts-node src/fix-videos.ts",
     "test": "jest"
   },
   "author": "",
