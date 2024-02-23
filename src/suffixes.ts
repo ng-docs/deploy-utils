@@ -1,1 +1,1 @@
-export const suffixes = ['live', 'cn'];
+export const suffixes = ['cn'];

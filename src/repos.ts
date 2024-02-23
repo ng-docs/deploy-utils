@@ -1,1 +1,0 @@
-const repos = ['ng-docs', 'aigc-spring-angular'];

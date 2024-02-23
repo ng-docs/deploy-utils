@@ -1,4 +1,4 @@
-import DNS, {AddDomainRecordRequest} from '@alicloud/alidns20150109';
+import DNS, {AddDomainRecordRequest, GetTxtRecordForVerifyRequest} from '@alicloud/alidns20150109';
 import * as $OpenApi from '@alicloud/openapi-client';
 
 export class DnsClient {
@@ -14,21 +14,27 @@ export class DnsClient {
     this.client = new DNS(config);
   }
 
-  async addDnsRecord(subName: string, type: string, value: string): Promise<void> {
+  async addDnsRecord(subName: string, domainName: string, type: string, value: string): Promise<void> {
     let req = new AddDomainRecordRequest({});
-    req.domainName = 'angular.cn';
+    req.domainName = domainName;
     req.RR = subName;
     req.type = type;
     req.value = value;
 
     console.log(`云解析添加域名(${subName})的结果(json)↓`);
     try {
-      let resp = await this.client.addDomainRecord(req);
-      console.log(resp);
+      if (!await this.getTxtRecord(subName, domainName)) {
+        const resp = await this.client.addDomainRecord(req);
+        console.log(resp);
+      }
     } catch (error) {
       console.log(error);
     }
   }
 
+  async getTxtRecord(subName: string, domainName: string): Promise<boolean> {
+    const resp = await this.client.getTxtRecordForVerify(new GetTxtRecordForVerifyRequest({DomainName: `${subName}.${domainName}`}));
+    return !!resp.body?.value;
+  }
 
 }

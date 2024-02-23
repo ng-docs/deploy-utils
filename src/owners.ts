@@ -1,0 +1,1 @@
+export const owners = ['ng-docs', 'aigc-spring-angular'];

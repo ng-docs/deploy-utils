@@ -2,7 +2,7 @@ import {launch} from 'puppeteer';
 
 async function main() {
   // Launch the browser and open a new blank page
-  const browser = await launch({headless: false, userDataDir: '~/chrome-data', timeout: 30 * 1000});
+  const browser = await launch({headless: false, userDataDir: './chrome-data', timeout: 30 * 1000});
   const pages = await browser.pages();
   const page = pages[0];
 
